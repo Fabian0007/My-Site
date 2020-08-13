@@ -9,7 +9,8 @@ type DataProps = {
       frontmatter: {
         title: string,
         path: string,
-        date: string
+        date: string,
+        tags: [string]
       },
       html: string
     }
@@ -44,6 +45,7 @@ query($slug: String!) {
     frontmatter {
       date(formatString: "MMMM DD, YYYY")
       title
+      tags
     }
   }
 }
