@@ -8,7 +8,10 @@ import Button from '../components/button'
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO
+      title="Home"
+      keywords={[`gatsby`, `application`, `react`]}
+    />
     <h1>Hi people</h1>
     <Button buttonText="Click me" />
     <p>Welcome to your new Gatsby site.</p>

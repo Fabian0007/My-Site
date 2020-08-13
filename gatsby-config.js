@@ -3,8 +3,22 @@ module.exports = {
     title: `Gatsby Default Starter`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
+    baseUrl: `https://random-netlify-url.netlify.com`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-XXXXXXXXX-X',
+      },
+    },
+    `gatsby-transformer-json`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/data`,
+      },
+    },
     `gatsby-plugin-sass`,
     {
       resolve: `gatsby-transformer-remark`,
@@ -16,6 +30,7 @@ module.exports = {
               maxWidth: 600,
             },
           },
+          `gatsby-remark-prismjs`,
         ],
       },
     },

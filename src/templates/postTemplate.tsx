@@ -1,5 +1,6 @@
 import React from 'react';
 import { PageProps, graphql } from 'gatsby';
+import SEO from '../components/seo';
 
 import Layout from '../components/layout';
 
@@ -19,6 +20,10 @@ const PostTemplate: React.FC<PageProps<DataProps>> = ({ data }) => {
   const { frontmatter, html } = markdownRemark;
   return (
     <Layout>
+      <SEO
+        title="Home"
+        keywords={[`gatsby`, `application`, `react`, ...frontmatter.tags]}
+      />
       <section>
         <div>
           <h1>{frontmatter.title}</h1>
