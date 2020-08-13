@@ -24,6 +24,7 @@ const PostTemplate: React.FC<PageProps<DataProps>> = ({ data }) => {
       <SEO
         title="Home"
         keywords={[`gatsby`, `application`, `react`, ...frontmatter.tags]}
+        description="post made by Fabian Andres Cano"
       />
       <section>
         <div>

@@ -10,6 +10,7 @@ const ProjectsPage = ({ data }) => (
     <SEO
       title="Home"
       keywords={[`gatsby`, `application`, `react`, `portfolio`]}
+      description="Fabian Andres Cano projects"
     />
     <h1>Projects</h1>
     <div className="project-list">
