@@ -11,11 +11,14 @@ const Header: React.FC<IProps> = ({ siteTitle }) => (
     style={{
       background: `#202324`,
       paddingTop: `1.45rem`,
-      marginBottom: `1.45rem`,
       textAlign: 'center',
       fontFamily: 'sans-serif',
       fontSize: '22px',
-      color:'#e8e6e3'
+      color:'#e8e6e3',
+      position: 'sticky',
+      top: 0,
+      zIndex: 200,
+      width: '100%'
     }}
   >
     <div

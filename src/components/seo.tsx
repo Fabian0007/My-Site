@@ -2,7 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 //@ts-ignore
-import seoImage from '../images/me.jpg';
+import seoImage from '../images/me-lg.jpg';
 
 type IProps = {
   description: string,
