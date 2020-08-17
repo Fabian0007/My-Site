@@ -11,8 +11,20 @@
     transform: translate(-50%, -50%);
 }
 
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 650px) {
+  .gatsby-image-wrapper > div {
+    padding-bottom: 150% !important /* your aspect ratio */
+  }
+}
+
+@media only screen and (min-width: 651px) and (max-width: 850px) {
   .gatsby-image-wrapper > div {
     padding-bottom: 112% !important /* your aspect ratio */
+  }
+}
+
+@media only screen and (min-width: 850px) and (max-width: 1199px) {
+  .gatsby-image-wrapper > div {
+    padding-bottom: 60% !important /* your aspect ratio */
   }
 }

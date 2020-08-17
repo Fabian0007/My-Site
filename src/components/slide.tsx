@@ -37,17 +37,32 @@ const Slide = () => {
           }
         }
       }
+      smmImage: file(relativePath: { eq: "me-smm.jpg" }) {
+        childImageSharp {
+          fluid(maxHeight: 3000) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `);
   const sources = [
     data.smImage.childImageSharp.fluid,
     {
       ...data.lgImage.childImageSharp.fluid,
-      media: `(min-width: 625px && max-width: 849px)`,
+      media: `(min-width: 1200px)`
     },
     {
-      ...data.lgImage.childImageSharp.fluid,
-      media: `(min-width: 850px)`,
+      ...data.mdImage.childImageSharp.fluid,
+      media: `(min-width: 850px) and (max-width: 1199px)`
+    },
+    {
+      ...data.smImage.childImageSharp.fluid,
+      media: `(min-width: 650px) and (max-width: 849px)`
+    },
+    {
+      ...data.smmImage.childImageSharp.fluid,
+      media: `(max-width: 649px)`,
     }
   ];
 
