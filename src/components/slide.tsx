@@ -51,7 +51,15 @@ const Slide = () => {
     }
   ];
 
-  return <Img fluid={sources} alt="Illustrated Monica" />;
+  return (
+    <div className="container-home">
+      <Img fluid={sources} alt="Fabian Andres Cano's photo" />
+      <div className="centered">
+        <h3>Hey, I'm</h3>
+        <h1>Fabian Andres Cano</h1>
+      </div>
+    </div>
+  );
 }
 
 export default Slide
