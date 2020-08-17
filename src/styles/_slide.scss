@@ -10,3 +10,9 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+@media only screen and (max-width: 850px) {
+  .gatsby-image-wrapper > div {
+    padding-bottom: 112% !important /* your aspect ratio */
+  }
+}
