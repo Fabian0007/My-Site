@@ -1,5 +1,6 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import React from "react";
+import { useStaticQuery, graphql } from "gatsby";
+import Img from "gatsby-image";
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
@@ -38,20 +39,19 @@ const Slide = () => {
       }
     }
   `);
-  console.log(data);
+  const sources = [
+    data.smImage.childImageSharp.fluid,
+    {
+      ...data.lgImage.childImageSharp.fluid,
+      media: `(min-width: 625px && max-width: 849px)`,
+    },
+    {
+      ...data.lgImage.childImageSharp.fluid,
+      media: `(min-width: 850px)`,
+    }
+  ];
 
-  return (
-    <picture>
-          <source media="(min-width: 850px)" srcSet={data.lgImage.childImageSharp.fluid.srcSet} />
-          <source media="(min-width: 650px)" srcSet={data.mdImage.childImageSharp.fluid.srcSet} />
-          <source srcSet={data.smImage.childImageSharp.fluid.srcSet} />
-          <img
-            src={data.smImage.childImageSharp.fluid.src}
-            alt="Fabian Andres Cano's Photo"
-            loading="lazy"
-          />
-      </picture>
-  );
+  return <Img fluid={sources} alt="Illustrated Monica" />;
 }
 
 export default Slide
