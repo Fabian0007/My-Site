@@ -5,7 +5,7 @@ import Layout from '../components/layout';
 import Img from 'gatsby-image';
 
 const BlogPage = ({ data }) => {
-    const posts = data.allMarkdownRemark.edges;
+    const posts = data.posts.edges;
     return (
       <Layout>
         <div className="post-list">
@@ -47,7 +47,7 @@ export default BlogPage;
 // Get all markdown data, in descending order by date, and grab the id, excerpt, slug, date, and title
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+    posts: allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
         edges {
             node {
                 id
@@ -69,6 +69,12 @@ export const pageQuery = graphql`
                 }
             }
         }
+    }
+    tags: allMarkdownRemark(limit: 2000) {
+      group(field: frontmatter___tags) {
+        fieldValue
+        totalCount
+      }
     }
 }
 `;
