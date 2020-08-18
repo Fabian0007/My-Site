@@ -12,8 +12,8 @@ const ProjectsPage = ({ data }) => (
       keywords={[`gatsby`, `application`, `react`, `portfolio`]}
       description="Fabian Andres Cano projects"
     />
-    <h1>Projects</h1>
     <div className="project-list">
+      <h1>Projects</h1>
       {data.allProjectsJson.edges.map(project => (
         <div key={project.node.id} className="project-list__item">
           <div className="project-list__thumbnail">
