@@ -26,7 +26,7 @@ const PostTemplate: React.FC<PageProps<DataProps>> = ({ data }) => {
         keywords={[`gatsby`, `application`, `react`, ...frontmatter.tags]}
         description="post made by Fabian Andres Cano"
       />
-      <section>
+      <section className="post-template">
         <div>
           <h1>{frontmatter.title}</h1>
           <span>{frontmatter.date}</span>
