@@ -2,12 +2,19 @@ import React from 'react';
 import { kebabCase } from 'lodash';
 import { graphql, Link } from 'gatsby';
 import Layout from '../components/layout';
+import SEO from '../components/seo';
+
 import Img from 'gatsby-image';
 
 const BlogPage = ({ data }) => {
     const posts = data.posts.edges;
     return (
       <Layout>
+        <SEO
+          title="Blog"
+          keywords={[`Fabian Andres Cano`, `Fabian`, `Cano`, `Blog`]}
+          description="Fabian Andres Cano Blog"
+        />
         <div className="post-list">
           {posts.map(post => (
             <div key={post.node.id} className="post-list__item">

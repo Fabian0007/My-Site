@@ -8,9 +8,9 @@ import Button from '../components/button';
 const ProjectsPage = ({ data }) => (
   <Layout>
     <SEO
-      title="Home"
-      keywords={[`gatsby`, `application`, `react`, `portfolio`]}
-      description="Fabian Andres Cano projects"
+      title="Projects"
+      keywords={[`Fabian Andres Cano`, `Fabian`, `Cano`, `Blog`]}
+      description="Fabian Andres Cano Projects"
     />
     <div className="project-list">
       <h1>Projects</h1>
