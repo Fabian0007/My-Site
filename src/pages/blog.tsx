@@ -8,6 +8,7 @@ import Img from 'gatsby-image';
 
 const BlogPage = ({ data }) => {
     const posts = data.posts.edges;
+    const tags = data.tags.group;
     return (
       <Layout>
         <SEO
@@ -16,6 +17,16 @@ const BlogPage = ({ data }) => {
           description="Fabian Andres Cano Blog"
         />
         <div className="post-list">
+          <div className="post-list__item">
+            <ul style={{ listStyleType: 'none' }}>
+            {tags.map(tag => (
+                <li style={{ float: 'left', padding: 16 }} key={tag.fieldValue + `tag`}>
+                <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>{tag.fieldValue}</Link>
+              </li>
+            ))
+            }
+            </ul>
+          </div>
           {posts.map(post => (
             <div key={post.node.id} className="post-list__item">
               <div className="post-list__thumbnail">
@@ -29,7 +40,7 @@ const BlogPage = ({ data }) => {
                 <h2>{post.node.frontmatter.title}</h2>
                 {post.node.frontmatter.tags ? (
                 <div className="tags-container">
-                  <ul className="taglist">
+                  <ul className="taglist" style={{ listStyleType: 'none' }}>
                     {post.node.frontmatter.tags.map(tag => (
                       <li key={tag + `tag`}>
                         <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
