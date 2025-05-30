@@ -10,7 +10,7 @@ type DataProps = {
         title: string,
         path: string,
         date: string,
-        tags: [string]
+        tags: string[]
       },
       html: string
     }
